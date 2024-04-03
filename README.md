@@ -1,31 +1,37 @@
 # ETL in Python and SQL
 
 ## *E*TL EXTRACTING DATA
-1. Exploring your data with pandas (Python) and SQL
-    ```python
-     import pandas as pd
-    ```
-2. Understanding your data
-    + ```python
-    df.head()
-    ```
-    + df.tail()
-    + df.shape
-    + df.info()
-    + df.duplicated()
-3. Reading from File
-    + sample_data = pd.read_csv('sample_data.csv')
-    + sample_data.shape
-    + sample_data.duplicated()
-    + duplicate_rows = sample_data[sample_data.duplicated()]
-4. Loading data from different sources
-    + sample_csv = pd.read_csv('sample_data_csv.csv', header=None)
-    + sample_exel = pd.read_excel('sample_data_excel.xlsx')
-5. Extracting your data
-    + import pandas as pd
-    + orders = pd.read_excel("H+ Sport Orders.xlsx")
-    + orders_execel = orders.head()
-    + orders_execel
+### Exploring your data with pandas (Python) and SQL
+#### Import dataframe module (panda)
+```python
+    import pandas as pd
+```
+### Understanding your data
+
+#### Display first 5 rows of data
+```python  
+ df.head()
+```
+#### Display last 5 rows of data
+ ```python
+ df.tail()
+```
+#### Show number of rows and columns from dataset (Excel)
+ ```python
+ df.shape
+ ```
+ #### Display DataFram info (dtype and columns, non-null and memory usage)
+ ```python 
+ df.info()
+```
+#### Display duplicate rows from dataset
+ ```python 
+ df.duplicated()
+ ```
+#### Reading from File
+```python
+sample_data = pd.read_csv('sample_data.csv')
+```
 
 ## E*T*L TRANSFORMIN DATA
 1. Cleaning Data
