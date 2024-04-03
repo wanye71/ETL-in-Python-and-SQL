@@ -6,7 +6,9 @@
      import pandas as pd
     ```
 2. Understanding your data
-    + df.head()
+    + ```python
+    df.head()
+    ```
     + df.tail()
     + df.shape
     + df.info()
