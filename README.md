@@ -2,6 +2,9 @@
 
 ## *E*TL EXTRACTING DATA
 1. Exploring your data with pandas (Python) and SQL
+    ```python
+     import pandas as pd
+    ```
 2. Understanding your data
     + df.head()
     + df.tail()
@@ -56,3 +59,31 @@
     Index(['Employee Name', 'Building', 'Department', 'Status', 'Hire Date',
        'Month', 'Years', 'Benefits', 'Salary'],
       dtype='object')
+
+# Data Warehousing and Data Lakes
+## Loading data into relational databases
+### Imports
+```python
+import pandas as pd
+import sqlalchemy as db
+```
+### Read data set from file
+```python
+customers = pd.read_excel("H+ Sport Customers.xlsx", sheet_name="data")
+```
+### Drop duplicate records
+```python
+customers.drop_duplicates()
+```
+### Drop column from data set
+```python
+customers = customers.drop(columns="Zipcode")
+```
+### Connect to database
+```python
+engine = db.create_engine('postgresql://tifwqjsh:mB2WRPrTia0MwJdWH2RQiZujAheiCfzU@salt.db.elephantsql.com/tifwqjsh')
+```
+### Insert data from Excel file into database
+```python
+customers.to_sql("customers", engine, if_exists='replace', index=False)
+```
