@@ -95,3 +95,21 @@ engine = db.create_engine('postgresql://tifwqjsh:mB2WRPrTia0MwJdWH2RQiZujAheiCfz
 ```python
 customers.to_sql("customers", engine, if_exists='replace', index=False)
 ```
+## Query for Data Quality Checks
+### Read data from Eployees Sheet from Employees Excel file
+```python
+import pandas as pd
+import sqlalchemy as db
+```
+### Remove row duplicates
+```python
+employees.drop_duplicates()
+```
+### Connect to Elephant Database
+```python
+engine = db.create_engine('postgresql://tifwqjsh:mB2WRPrTia0MwJdWH2RQiZujAheiCfzU@salt.db.elephantsql.com/tifwqjsh')
+```
+### Add data to Database
+```python
+employees.to_sql("employees", engine, if_exists="replace", index=False)
+```
