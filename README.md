@@ -12,3 +12,6 @@
     - sample_data.shape
     - sample_data.duplicated()
     - duplicate_rows = sample_data[sample_data.duplicated()]
+4. Loading data from different sources
+    - sample_csv = pd.read_csv('sample_data_csv.csv', header=None)
+    - sample_exel = pd.read_excel('sample_data_excel.xlsx')
